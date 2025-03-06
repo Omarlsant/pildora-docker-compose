@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+client-frontend/node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+server-backend/env/
+server-backend/__pycache__/
+server-backend/staticfiles/
+server-backend/media/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# Django migrations
+server-backend/app/migrations/
+
+# Database files
+*.sqlite3
+
+# Virtual environments
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Environment variables
+.env
+
+# Other artifacts
+*.swp
