@@ -1,0 +1,18 @@
+# .dockerignore para server-backend
+
+# Ignorar entornos virtuales
+env
+.venv
+
+# Ignorar archivos de caché de Python
+__pycache__
+*.pyc
+
+# Ignorar archivos de configuración de sistemas operativos
+.DS_Store
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar otros archivos temporales
+*.swp

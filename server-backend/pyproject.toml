@@ -1,0 +1,12 @@
+[project]
+name = "server-backend"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "coreapi>=2.3.3",
+    "django>=5.1.7",
+    "django-cors-headers>=4.7.0",
+    "djangorestframework>=3.15.2",
+    "mysqlclient>=2.2.7",
+    "python-dotenv>=1.0.1",
+]
