@@ -1,0 +1,6 @@
+coreapi
+django
+django-cors-headers
+djangorestframework
+mysqlclient
+python-dotenv

@@ -1,16 +1,12 @@
-version: '3.8'
-
 services:
   db:
     image: mysql:8.0
     container_name: crud_task_db
     environment:
-      MYSQL_ROOT_PASSWORD: 123412
+      MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: crud_task
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123412
     ports:
-      - "3306:3306"
+      - "3307:3306"  # Cambiar a 3307
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -26,7 +22,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: root
-      DB_PASSWORD: 123412
+      DB_PASSWORD: 123456
       DB_NAME: crud_task
     networks:
       - my_network
@@ -41,3 +37,6 @@ services:
 
 volumes:
   db_data:
+
+networks:
+  my_network:
