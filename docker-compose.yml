@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: crud_task_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123412
+      MYSQL_DATABASE: crud_task
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123412
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - my_network
+
+  backend:
+    build: ./server-backend
+    container_name: backend_container
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: 123412
+      DB_NAME: crud_task
+    networks:
+      - my_network
+
+  frontend:
+    build: ./client-frontend
+    container_name: frontend_container
+    ports:
+      - "3000:3000"
+    networks:
+      - my_network
+
+volumes:
+  db_data:

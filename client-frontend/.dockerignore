@@ -1,0 +1,13 @@
+# .dockerignore para client-frontend
+
+# Ignorar node_modules
+node_modules
+
+# Ignorar archivos de log
+npm-debug.log
+
+# Ignorar archivos de configuración de sistemas operativos
+.DS_Store
+
+# Ignorar otros archivos temporales
+*.swp

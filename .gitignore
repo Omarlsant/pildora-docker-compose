@@ -48,3 +48,7 @@ env/
 *.swp
 
 .vite/
+
+uv.lock
+
+__init__.py
