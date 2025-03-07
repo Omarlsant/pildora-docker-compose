@@ -28,8 +28,12 @@ const ListOfTask = () => {
       <ul className="list-disc pl-5">
         {tasks.map(task => (
           <li key={task.id} className="mb-2">
-            <strong>{task.name}</strong>: {task.description}
-          </li>
+          <div className="bg-gray-100 p-4 rounded-md shadow">
+              <p className="text-sm text-gray-500">ID: {task.id}</p>
+              <h3 className="text-lg font-semibold">{task.title}</h3>
+              <p className="text-gray-700">{task.description}</p>
+          </div>
+      </li>
         ))}
       </ul>
     </div>

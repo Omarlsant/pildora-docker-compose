@@ -28,17 +28,22 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - my_network
+    healthcheck: 
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+      interval: 5s
 
   backend:
     build: ./server-backend
     container_name: backend_container
-    depends_on:
-      - mysql_microservice
+    depends_on:  
+      crud_task_db:
+        condition: service_healthy
     ports:
       - "8000:8000"
     environment:
-      # DB_HOST: mysql_microservice_container
-      DB_HOST: ${DB_HOST}
+      DB_HOST: crud_task_db
       DB_USER: root
       DB_PASSWORD: 123412
       DB_NAME: crud_task
@@ -52,6 +57,9 @@ services:
       - "3000:3000"
     networks:
       - my_network
+    depends_on:  # Igual que en backend
+      crud_task_db:
+        condition: service_healthy
 
 volumes:
   mysql_data:
