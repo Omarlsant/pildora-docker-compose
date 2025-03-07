@@ -84,11 +84,11 @@ DATABASES = {
         'NAME': 'crud_task',
         'USER': 'root',
         'PASSWORD': '123412',
-        # 'HOST': 'localhost',
-        'HOST': os.getenv('DB_HOST'),
+        'HOST': 'crud_task_db',
         'PORT': '3306',
     }
 }
+
 
 
 # Password validation
